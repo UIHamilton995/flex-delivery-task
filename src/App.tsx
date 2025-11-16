@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './components/layout/Layout'; // Import your new Layout
 import MarketplacePage from './pages/marketplace/Marketplace';
+import DeliveryDetailsPage from './pages/deliveryDetails/DeliveryDetails';
 
 
 const router = createBrowserRouter([
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: '/', // <-- 2. ADD THE ROUTE
         element: <MarketplacePage />,
+      },
+      {
+        path: '/deliveryDetails', // <-- 2. ADD THE ROUTE
+        element: <DeliveryDetailsPage />,
       },
       // ...other routes
     ],
