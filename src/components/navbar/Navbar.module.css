@@ -1,0 +1,216 @@
+/* --- MAIN NAVBAR CONTAINER --- */
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 48px;
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #eaecf2;
+
+  /* --- POSITIONING --- */
+  /* This makes it stick to the top */
+  position: fixed;
+  top: 0;
+  /* This "latches" it to the 262px sidebar */
+  left: 262px;
+  /* This makes it fill the rest of the screen width */
+  width: calc(100% - 262px);
+  z-index: 900;
+}
+
+/* --- 1. SEARCH AREA (LEFT) --- */
+.searchArea {
+  display: flex;
+}
+
+.searchBar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 8px;
+  width: 320px;
+  height: 36px;
+  background: #f9f9fa;
+  border-radius: 8px;
+}
+
+.searchBar svg {
+  width: 16px;
+  height: 16px;
+  color: #6d747a;
+  flex-shrink: 0;
+}
+
+.searchBar input {
+  width: 100%;
+  height: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #6d747a;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: #6d747a;
+}
+
+/* --- 2. USER AREA (RIGHT) --- */
+.userArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px; /* Main gap between items */
+}
+
+/* Quick Actions */
+.quickActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #1d1e20;
+}
+.quickActions svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Timer Button */
+.timerButton {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.timerButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.timerBadge {
+  /* Based on "Noties" from Figma CSS */
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 11px; /* Position relative to the button */
+  top: 1px;
+  background: #f97316;
+  border-radius: 100px;
+  /* Add a white border to match the avatar style */
+  border: 2px solid #ffffff;
+}
+
+/* Avatar Stack */
+.avatarStack {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* Add padding to offset the first avatar's negative margin */
+  padding-left: 13.33px;
+}
+
+.avatar {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 2.5px solid #ffffff;
+  border-radius: 333px; /* 50% */
+  /* This creates the overlap */
+  margin-left: -13.33px;
+}
+
+/* Profile Area */
+.profileArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+}
+
+.profileAvatar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #f9f9fa;
+  border: 2px solid #eaecf2;
+  border-radius: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1d1e20;
+  cursor: pointer;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.profileName {
+  width: 154px; /* Fixed width from Figma */
+  height: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0c1821;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileRole {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  height: 16px;
+  background: #f9f9fa;
+  border-radius: 2px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: #1d1e20;
+}
+
+.profileDropdown {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profileDropdown svg {
+  width: 20px;
+  height: 20px;
+  color: #4a4a4c;
+}

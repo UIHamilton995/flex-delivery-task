@@ -1,0 +1,233 @@
+/* --- FONT IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@800&display=swap');
+
+/* --- MAIN SIDEBAR CONTAINER --- */
+.sidebar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 262px;
+  height: 100vh; /* Use vh for full height */
+  background: #1e3a8a;
+  border-right: 1px solid #eaecf2;
+
+  /* --- REFACTOR CHANGES --- */
+  position: fixed;  /* Fixes the element relative to the viewport */
+  top: 0;           /* Aligns it to the top edge */
+  left: 0;          /* Aligns it to the left edge */
+  z-index: 1000;    /* Ensures it stays on top of other content */
+}
+
+/* --- HEADER (LOGO AREA) --- */
+.sidebarHeader {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding-left: 40px;
+  width: 262px;
+  height: 72px;
+  background: #ffffff;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.logo {
+  box-sizing: border-box;  
+  height: 30px;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.logo strong {
+  font-weight: 400; /* 'Delivery' part seems lighter */
+}
+
+.collapseBtn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 2px;
+  width: 32px;
+  height: 32px;
+  background: #f7f8f9;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #0c1821;
+}
+
+/* --- NAVIGATION AREA --- */
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex-grow: 1; /* Makes nav fill available space */
+  overflow-y: auto; /* Adds scroll if items overflow */
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 8px;
+  background: linear-gradient(0deg, #142f7c, #142f7c), #1e3a8a;
+  border-radius: 10px;
+}
+
+/* --- NAVIGATION ITEMS (SHARED) --- */
+.navItem {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+  width: 190px;
+  height: 44px;
+  background: #1e3a8a;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #bdbdbd;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navItem.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Text part of the nav item */
+.navItem span {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Icon in the nav item */
+.navItem svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* --- BADGE --- */
+.badge {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background: #f97316;
+  border-radius: 16px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  color: #1e3a8a;
+  flex-shrink: 0;
+}
+
+/* --- DROPDOWN SPECIFICS --- */
+.navDropdown {
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Force space-between on dropdown parent to push chevron */
+.navDropdown > .navItem {
+  justify-content: space-between;
+}
+
+.navSubmenu {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0 0 0; /* 12px padding top from 'Frame 20' */
+  gap: 4px; /* Added small gap for spacing */
+}
+
+.navSubItem {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0px 8px 30px; /* 30px indent from spec */
+  width: 166px; /* Spec width */
+  height: 36px;
+  background: #1e3a8a;
+  border-radius: 8px;
+  margin-left: 12px; /* Aligns with parent padding */
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #bdbdbd;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navSubItem span {
+  flex-grow: 1;
+}
+
+.navSubItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navSubItem.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* --- FOOTER --- */
+.sidebarFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  gap: 16px;
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.versionInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.devBadge {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  background: #f9f9fa;
+  border: 1px solid #eaecf2;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #0c1821;
+}
+
+.versionText {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
