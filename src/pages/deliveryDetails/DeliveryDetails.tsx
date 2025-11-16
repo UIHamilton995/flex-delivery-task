@@ -8,8 +8,12 @@ import {
   Star,
   Edit2,
   Send,
-  User,
 } from 'lucide-react';
+import box1 from '../../assets/box1.png'
+import box2 from '../../assets/box2.png'
+import box3 from '../../assets/box3.png'
+import avatarDeliver from '../../assets/avatarDeliver.png'
+
 
 // --- HELPER COMPONENTS ---
 
@@ -58,7 +62,7 @@ const UserCard = ({
     <h3 className={styles.cardTitle}>{cardTitle}</h3>
     <div className={styles.userHeader}>
       <div className={styles.avatar}>
-        <User size={20} />
+        <img src={avatarDeliver} />
       </div>
       <div className={styles.userInfo}>
         <span className={styles.userName}>{userName}</span>
@@ -151,14 +155,14 @@ export const DeliveryDetails = () => {
                   <span>25 Views</span>
                 </div>
                 {/* Placeholder for the large box image */}
-                <div className={styles.mainImage} />
+                <img src={box1} className={styles.mainImage} />
               </div>
               <div className={styles.thumbnailContainer}>
                 {/* Placeholders for the 4 thumbnail images */}
-                <div className={styles.thumbnailImage} />
-                <div className={styles.thumbnailImage} />
-                <div className={styles.thumbnailImage} />
-                <div className={styles.thumbnailImage} />
+                <img src={box1} className={styles.thumbnailImage} />
+                <img src={box2} className={styles.thumbnailImage} />
+                <img src={box2} className={styles.thumbnailImage} />
+                <img src={box3} className={styles.thumbnailImage} />
               </div>
             </div>
 

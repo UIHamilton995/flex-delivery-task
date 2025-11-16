@@ -1,16 +1,12 @@
-/* --- GLOBAL PAGE STYLING --- */
-.deliveryDetailsPage {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-}
+/* DeliveryDetails.module.css */
 
-.divider {
-  border: none;
-  height: 1px;
-  background: #eaecf2;
-  margin: 0;
+/* --- GLOBAL & FONT STYLES --- */
+/* Assuming 'Poppins' is imported in the main HTML or a global CSS file */
+.deliveryDetailsPage {
+  font-family: 'Poppins', sans-serif;
+  color: #1d1e20;
+  background-color: #f9fafb; /* A neutral background for the page */
+  padding: 4px;
 }
 
 /* --- 1. PAGE HEADER --- */
@@ -18,39 +14,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin-bottom: 4px;
 }
 
 .pageHeader h1 {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
   font-size: 20px;
-  color: #1d1e20;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .exportButton {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 10px;
-  padding: 0;
-  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d1e20;
+  background-color: transparent;
   border: none;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #1d1e20;
 }
 
 /* --- 2. MAIN CONTENT CONTAINER --- */
 .mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- COLLAPSIBLE SECTION --- */
+.collapsibleSection {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 32px;
-  gap: 16px; /* Gap between collapsible sections */
   width: 100%;
   background: #ffffff;
   border: 1px solid #e7e8e9;
@@ -58,32 +54,31 @@
   border-radius: 8px;
 }
 
-/* --- 3. COLLAPSIBLE SECTION --- */
-.collapsibleSection {
-  display: flex;
-  flex-direction: column;
-}
-
 .sectionHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 32px;
   background: none;
   border: none;
-  padding: 0;
   cursor: pointer;
+  text-align: left;
 }
-
-.sectionHeader:hover {
-  opacity: 0.8;
+/* For the bottom section, the padding is less when collapsed */
+.collapsibleSection:last-child .sectionHeader {
+  padding-bottom: 32px;
+}
+.sectionContent {
+  padding: 0 32px 32px 32px;
 }
 
 .sectionTitle {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   color: #757f8c;
@@ -93,36 +88,43 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #1d1e20;
 }
 
 .statusDot {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
   background: #f97316;
+  border-radius: 50%;
 }
 
-.sectionContent {
-  padding-top: 24px;
+.statusBadge span {
+  font-weight: 500;
+  font-size: 12px;
+  color: #1d1e20;
 }
 
-/* --- 4. TOP GRID (Images, Pickup, Package) --- */
-.detailsGridTop {
+.divider {
+  border: none;
+  border-top: 1px solid #eaecf2;
+  width: 100%;
+  margin: 0;
+}
+
+.detailsGridTop,
+.detailsGridBottom {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 32px;
 }
 
-/* --- Col 1: Image Gallery --- */
+/* --- IMAGE GALLERY --- */
 .imageGallery {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  /* This card has different padding */
   padding: 20px;
+  gap: 20px;
+  background: #ffffff;
   border: 1px solid #eaecf2;
   border-radius: 12px;
 }
@@ -130,32 +132,29 @@
 .mainImageContainer {
   position: relative;
   width: 100%;
-  height: 292px; /* From Figma */
+  padding-top: 75%; /* Aspect ratio for the main image */
   background: #f9fafb;
   border-radius: 6px;
 }
 
 .mainImage {
-  /* This is the placeholder box */
-  width: 80%;
-  height: 80%;
-  background: #e0e0e0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: url('https://i.imgur.com/L13sD3g.png') no-repeat center center;
-  background-size: contain;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .viewsBadge {
   position: absolute;
   top: 12px;
   left: 12px;
+  z-index: 1;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: 6px;
+  padding: 6px 10px;
   background: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 10px;
@@ -169,22 +168,24 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  height: 80px;
 }
 
 .thumbnailImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.15;
   background: #f9fafb;
   border-radius: 6px;
-  background: url('https://i.imgur.com/L13sD3g.png') no-repeat center center;
-  background-size: contain;
+  object-fit: contain;
 }
 
-/* --- Cols 2 & 3: Details Cards --- */
+/* --- DETAILS CARD (Used for Pickup & Package) --- */
 .detailsCard {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   padding: 20px;
+  gap: 20px;
   background: #fbfcfe;
   border: 1px solid #eaecf2;
   border-radius: 12px;
@@ -194,21 +195,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
-
 .cardHeader h3 {
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 14px;
+  line-height: 21px;
   color: #757f8c;
-  margin: 0;
 }
 
 .cardHeader button {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #757f8c;
 }
 
@@ -226,26 +228,28 @@
 }
 
 .detailLabel {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
+  font-weight: 400;
   font-size: 14px;
   color: #757f8c;
   white-space: nowrap;
 }
 
 .detailValue {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
   font-size: 14px;
   color: #1d1e20;
   text-align: right;
 }
 
+/* --- PICKUP ADDRESS SECTION --- */
 .pickupAddress {
+  border-top: 1px solid #eaecf2;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  border-top: 1px solid #eaecf2;
-  padding-top: 12px;
+  gap: 8px;
 }
 
 .radioGroup {
@@ -253,99 +257,110 @@
   align-items: center;
   gap: 8px;
 }
+.radioGroup input[type='radio'] {
+  accent-color: #f97316;
+}
 
 .radioGroup label {
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 14px;
-  color: #1d1e20;
+  font-size: 12px;
+  color: #757f8c;
 }
 
 .addressInfo {
+  padding-left: 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-left: 28px; /* To indent from radio button */
+  gap: 8px;
 }
 
-/* --- 5. BOTTOM GRID (Seller, Buyer) --- */
-.detailsGridBottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+.addressInfo .detailLabel {
+  opacity: 0.8;
+  font-weight: 500;
+}
+.addressInfo .detailValue {
+  opacity: 0.8;
+  font-weight: 500;
 }
 
+/* --- USER CARD (Seller & Buyer) --- */
 .userCard {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   padding: 20px;
+  gap: 16px;
   background: #fbfcfe;
   border: 1px solid #eaecf2;
   border-radius: 12px;
 }
 
 .cardTitle {
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: #757f8c;
-  margin: 0;
 }
 
 .userHeader {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eaecf2;
 }
 
 .avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: #f0f0f0;
-  color: #757f8c;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .userInfo {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 .userName {
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  color: #1d1e20;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
 }
 
 .rating {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
-  font-weight: 500;
+}
+
+.rating span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1d1e20;
+  line-height: 1;
 }
 
 .userDetails {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .userDetails h4 {
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   color: #757f8c;
-  margin: 0;
 }
 
 .emojiRating {
-  display: flex;
-  gap: 4px;
-  font-size: 20px;
+  font-size: 20px; /* Adjust as needed */
+  letter-spacing: 4px;
 }
