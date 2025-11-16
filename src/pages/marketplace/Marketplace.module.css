@@ -1,0 +1,429 @@
+/* --- GLOBAL PAGE STYLING --- */
+.marketplacePage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #eaecf2;
+  margin: 0;
+}
+
+/* --- 1. PAGE HEADER --- */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pageHeader h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1d1e20;
+}
+
+.exportButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #1d1e20;
+}
+
+.exportButton svg {
+  color: #4a4a4c;
+}
+
+/* --- 2. MAIN CONTENT CONTAINER --- */
+.contentContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  gap: 24px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #eaecf2;
+  border-radius: 8px;
+}
+
+/* --- 3. OVERVIEW SECTION --- */
+.overviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.overviewSection h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1d1e20;
+  margin: 0;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 56px; /* Gap from Figma, might be too large, adjust if needed */
+}
+
+.statBlock {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 16px;
+  border-left: 1px solid #e7e8e9;
+}
+
+.statBlock label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #757f8c;
+  white-space: nowrap;
+}
+
+.statBlock span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #1d1e20;
+}
+
+/* --- 4. TOOLBAR SECTION --- */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.searchAssets {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+  width: 288px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #eaecf2;
+  border-radius: 8px;
+}
+
+.searchAssets svg {
+  color: #4a4a4c;
+}
+
+.searchAssets input {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #757f8c;
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+}
+
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.toolbarButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #1d1e20;
+}
+
+.dateButton {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  height: 36px;
+  border: 1px solid #eaecf2;
+  border-radius: 8px;
+  background: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #1d1e20;
+}
+
+/* --- 5. ADVANCED FILTER SECTION --- */
+.advancedFilter {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px 20px;
+  gap: 20px;
+  background: #fbfcfe;
+  border: 1px solid #eaecf2;
+  border-radius: 6px;
+}
+
+.advancedFilter h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #3d464d;
+  margin: 0;
+}
+
+/* --- FILTER GRID (FIXED) --- */
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+
+/* Form Groups */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.formGroup label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #3d464d;
+}
+
+.customSelect,
+.customInput {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #eaecf2;
+  border-radius: 6px;
+}
+
+.customSelect span,
+.customInput span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #757f8c; /* Placeholder color from Figma */
+}
+
+.customSelect {
+  cursor: pointer;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 10px;
+}
+.inputGroup > * {
+  width: 100%;
+}
+
+/* Filter Action Buttons */
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 4px; /* Inferred spacing */
+}
+
+.resetButton,
+.applyButton {
+  box-sizing: border-box;
+  padding: 10px 16px;
+  height: 36px;
+  border: 1px solid #eaecf2;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.resetButton {
+  background: #ffffff;
+  color: #1d1e20;
+}
+
+.applyButton {
+  background: #f97316; /* Color from sidebar badge */
+  color: #ffffff;
+  border-color: #f97316;
+}
+
+/* --- 6. DATA TABLE SECTION (STYLES FIXED) --- */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto; /* Ensures table is responsive */
+}
+
+.tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableContainer th,
+.tableContainer td {
+  padding: 16px 12px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  border-bottom: 1px solid #eaecf2;
+  white-space: nowrap;
+}
+
+.tableContainer th {
+  font-weight: 600;
+  color: #3d464d;
+  background: #ffffff; /* --- FIX: Header is white --- */
+}
+
+.tableContainer td {
+  font-weight: 500;
+  color: #4a4a4c;
+}
+
+/* --- FIX: Even rows have background color --- */
+.tableContainer tbody tr:nth-child(even) {
+  background: #f9f9fa;
+}
+
+.tableContainer tbody tr:hover {
+  background: #f0f0f0; /* Optional: nice hover effect */
+}
+
+
+.tableContainer input[type='checkbox'] {
+  /* Add styling for checkbox if needed */
+}
+
+/* Status Badge */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.statusBadge.pending::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f97316;
+}
+.statusBadge.pending {
+  color: #f97316;
+}
+
+/* More Button */
+.moreButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: none;
+  border: 1px solid #eaecf2;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #4a4a4c;
+}
+
+
+/* --- 7. PAGINATION SECTION (ADDED) --- */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #4a4a4c;
+}
+
+.paginationPerPage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.paginationSelect {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid #eaecf2;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.paginationControls span {
+  font-weight: 500;
+}
+
+.paginationControls button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #4a4a4c;
+  font-weight: 600;
+}
+
+.paginationControls button:disabled {
+  color: #bdbdbd;
+  cursor: not-allowed;
+}

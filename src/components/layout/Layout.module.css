@@ -1,26 +1,28 @@
 .appContainer {
-  /* This outer container isn't strictly necessary
-     but is good practice for global layout styling. */
   position: relative;
 }
 
 .mainContent {
-  /*
-  This is the most important rule.
-  It pushes the main content to the right by the *exact*
-  width of your sidebar (262px).
-  */
+  /* Pushes content to the right of the 262px sidebar */
   margin-left: 262px;
 
-  /* Ensures the content itself is scrollable if it
-  overflows the viewport height. The sidebar will not scroll with it.
+  /*
+  --- THIS IS THE FIX ---
+  Pushes the content *down* by the exact 72px height of your navbar.
   */
-  height: 100%;
-  
+  margin-top: 72px;
+
+  /*
+  Ensures the content area has its own scrollbar and
+  doesn't scroll the entire page (or the sidebar/navbar).
+  */
+  height: calc(100vh - 72px);
+  overflow-y: auto;
+
   /* Optional: Add some padding to your content area */
   padding: 24px;
   box-sizing: border-box;
-  
-  /* Optional: Ensures the width calculation is correct */
+
+  /* This width calculation is still correct */
   width: calc(100% - 262px);
 }

@@ -13,13 +13,11 @@ import {
   ClipboardList,
   ArrowLeftToLine,
   ChevronDown,
-  Icon,
+  type LucideIcon,
 } from 'lucide-react';
 import logo from '../../assets/flexLogo.png'
 
 // --- TYPE DEFINITIONS ---
-
-type Icon = Doc<'icon'>
 
 type NavSubItem = {
   id: string;
@@ -33,7 +31,7 @@ type NavItem = {
   id: string;
   label: string;
   href: string;
-  icon: Icon;
+  icon: LucideIcon;
   count?: number;
   active?: boolean;
   children?: NavSubItem[];
