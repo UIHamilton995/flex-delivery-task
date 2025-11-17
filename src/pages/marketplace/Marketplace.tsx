@@ -15,6 +15,7 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // --- TYPE DEFINITIONS FOR TABLE DATA ---
 type AdStatus = 'Pending' | 'Active' | 'Rejected';
@@ -335,6 +336,15 @@ export const MarketplacePage = () => {
         <Pagination />
 
       </div>
+
+      {/* --- NEW NAVIGATION BUTTON --- */}
+      {/* This button is positioned using fixed styles, so it will "dangle" on the page */}
+      <Link to='/deliveryDetails'>
+        <button className={styles.navigateToDeliveryButton}>
+          Move to Delivery Details
+        </button>
+      </Link>
+
     </div>
   );
 };

@@ -427,3 +427,32 @@
   color: #bdbdbd;
   cursor: not-allowed;
 }
+/* --- Add this to your Marketplace.module.css file --- */
+
+.navigateToDeliveryButton {
+  /* Positioning */
+  position: fixed;
+  top: 50%;
+  right: 20px; /* A little offset from the edge */
+  transform: translateY(-50%); /* This perfectly centers the button vertically */
+  z-index: 1000; /* Ensures the button stays on top of other content */
+
+  /* Appearance */
+  background-color: #1e3a8a; /* A nice, modern blue */
+  color: white;
+  padding: 12px 24px; /* Creates a moderate button size */
+  border: none;
+  border-radius: 8px; /* Softly rounded corners */
+  font-size: 16px;
+  font-weight: 600; /* Semi-bold text */
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* A subtle shadow to lift it off the page */
+  
+  /* Smooth transitions for hover effects */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navigateToDeliveryButton:hover {
+  background-color: #0056b3; /* A darker blue on hover for feedback */
+  transform: translateY(-50%) scale(1.05); /* Slightly enlarges the button on hover */
+}
